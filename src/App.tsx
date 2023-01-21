@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 const App = () => {
   return (
-    <main>
+    <main className="max-w-5xl m-[0_auto]">
       <Outlet />
     </main>
   )

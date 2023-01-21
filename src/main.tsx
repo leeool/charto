@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client"
 import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./style.css"
+import Header from "./components/Header"
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className="font-outfit text-smoke ">
+      <Header />
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>
 )
