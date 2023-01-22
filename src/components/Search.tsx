@@ -9,7 +9,7 @@ interface ISearch {
 const Search = ({ value, onChange, placeholder }: ISearch) => {
   return (
     <input
-      className="bg-carbon-400  placeholder:text-carbon-100 w-full px-2 py-1 rounded-primary min-h-[2rem] h-9  focus:outline-none focus:ring-1 hover:ring-1  ring-smoke ring-offset-4 ring-offset-carbon-300 text-white transition-all"
+      className="bg-carbon-400  placeholder:text-carbon-100 w-full px-2 py-1 rounded-primary min-h-[2rem] h-9  focus:outline-none focus:ring-1 hover:ring-1  ring-smoke ring-offset-2 ring-offset-carbon-300 text-white transition-all"
       type={"search"}
       value={value}
       onChange={onChange}
