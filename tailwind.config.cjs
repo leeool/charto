@@ -37,6 +37,12 @@ module.exports = {
           400: "#2a2a2a"
         },
         smoke: "#efefef"
+      },
+
+      fontSize: {
+        logo: "4rem",
+        mainTitle: "2.5rem",
+        subTitle: "1.5rem"
       }
     }
   },
