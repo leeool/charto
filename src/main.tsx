@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client"
 import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./style.css"
-import Header from "./components/Header"
+import Home from "./pages/Home"
+import AlbumStorage from "./context/AlbumContext"
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/favoritos"
       },
@@ -22,9 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <div className="font-outfit text-smoke ">
-      <Header />
+    <AlbumStorage>
       <RouterProvider router={router} />
-    </div>
+    </AlbumStorage>
   </React.StrictMode>
 )
