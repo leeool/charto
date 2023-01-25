@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./style.css"
-import Home from "./pages/Home"
+import Home from './pages/index'
 import AlbumStorage from "./context/AlbumContext"
 
 const router = createBrowserRouter([
