@@ -7,7 +7,7 @@ export const getAuth = axios.create({
   },
   headers: {
     Authorization:
-      "Basic YTM0OTdiMTdlNmYxNDA5YWI5ZjcwYjU4ZjIwZGYyNDE6Y2UxOWUwMWU1ZDZmNDNmODgwZmUyYThkN2NiMTI0ZWE=",
+      `Basic ${import.meta.env.VITE_SPOTIFY_API_KEY}`,
     ["Content-Type"]: "application/x-www-form-urlencoded"
   },
   method: "POST"
