@@ -42,3 +42,8 @@ interface ArtistData {
   url: string
   href: string
 }
+
+interface IParams {
+  q?: string
+  type?: string
+}

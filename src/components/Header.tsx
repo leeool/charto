@@ -34,7 +34,7 @@ const Header = () => {
         <nav className="col-span-full justify-self-center  text-xl py-3">
           <ul className="flex gap-4 ">
             <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors">
-              Descobrir
+              <NavLink to={"/descobrir"}>Descobrir</NavLink>
             </li>
             <span className="w-[2px] bg-carbon-100"></span>
             <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors">

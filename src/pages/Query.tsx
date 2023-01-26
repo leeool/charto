@@ -5,7 +5,10 @@ import UseGetData from "../hooks/UseGetData"
 
 const Query = () => {
   const { searchValue } = React.useContext(AlbumContext)
-  const { data } = UseGetData(searchValue, "album,track", "/search")
+  const { data } = UseGetData("/search", {
+    q: searchValue,
+    type: "album,track"
+  })
 
   return (
     <div>

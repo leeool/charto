@@ -6,6 +6,7 @@ import "./style.css"
 import Home from "./pages/Home"
 import AlbumStorage from "./context/AlbumContext"
 import Query from "./pages/Query"
+import Discovery from "./pages/Discovery"
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         path: "/favoritos"
       },
       {
+        element: <Discovery />,
         path: "/descobrir"
       },
       {

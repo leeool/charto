@@ -1,14 +1,15 @@
 import React from "react"
 import getAlbum, { fetchData } from "../API/getAlbumData"
 
-const UseGetData = (query: string, type: string, endpoint: string) => {
+const UseGetData = (endpoint: string, params: IParams) => {
   const [data, setData] = React.useState<IAlbumData[] | null>(null)
 
   React.useEffect(() => {
-    fetchData(endpoint, query, type)
+    console.log("s")
+    fetchData(endpoint, params)
       .then((res) => getAlbum(res))
       .then((res) => setData(res))
-  }, [query])
+  }, [params.q])
 
   return { data }
 }

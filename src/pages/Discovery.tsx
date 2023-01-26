@@ -2,14 +2,14 @@ import React from "react"
 import Section from "../components/Section"
 import UseGetData from "../hooks/UseGetData"
 
-const Home = () => {
+const Discovery = () => {
   const { data } = UseGetData("/browse/new-releases", {})
 
   return (
     <div>
-      <Section data={data} title="Novos Lançamentos" />
+      <Section data={data} title="Descobrir" />
     </div>
   )
 }
 
-export default Home
+export default Discovery

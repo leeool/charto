@@ -1,19 +1,12 @@
 import { getData } from "./apiGlobal"
 import getAuthorization from "./getAuthorization"
 
-export const fetchData = async (
-  endpoint: string,
-  query: string,
-  type: string
-) => {
+export const fetchData = async (endpoint: string, params: IParams) => {
   try {
     const auth = await getAuthorization()
     if (!auth.access_token) throw new Error("Token Error")
     const data = await getData.get(endpoint, {
-      params: {
-        q: query,
-        type: type
-      },
+      params: params,
       headers: {
         Authorization: `Bearer ${auth.access_token}`
       }
