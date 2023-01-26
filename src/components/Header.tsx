@@ -8,14 +8,13 @@ const Header = () => {
   const { handleSearchValue } = React.useContext(AlbumContext)
   const nav = useNavigate()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {}
-
   const handleSubmit = (e: React.FormEvent) => {
     if (
       e.target instanceof HTMLFormElement &&
       e.target[0] instanceof HTMLInputElement
     ) {
       e.preventDefault()
+      if (!e.target[0].value.trim()) return
       handleSearchValue(e.target[0].value)
       nav("/pesquisa")
     }
@@ -28,7 +27,7 @@ const Header = () => {
           <h1 className="text-logo">Charto</h1>
         </Link>
         <form onSubmit={handleSubmit}>
-          <Search placeholder="Pesquisar..." onChange={handleChange} />
+          <Search placeholder="Pesquisar..." />
         </form>
         <span className="border-t-[2px] border-carbon-100 col-span-full "></span>
         <nav className="col-span-full justify-self-center  text-xl py-3">
