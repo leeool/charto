@@ -5,7 +5,6 @@ const UseGetData = (endpoint: string, params: IParams) => {
   const [data, setData] = React.useState<IAlbumData[] | null>(null)
 
   React.useEffect(() => {
-    console.log("s")
     fetchData(endpoint, params)
       .then((res) => getAlbum(res))
       .then((res) => setData(res))
