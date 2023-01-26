@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./style.css"
 import Home from "./pages/Home"
 import AlbumStorage from "./context/AlbumContext"
+import Query from "./pages/Query"
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/descobrir"
+      },
+      {
+        element: <Query />,
+        path: "/pesquisa"
       }
     ]
   }
