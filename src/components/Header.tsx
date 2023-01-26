@@ -1,13 +1,21 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import { AlbumContext } from "../context/AlbumContext"
 import Search from "./Search"
 
 const Header = () => {
+  const [searchValue, setSearchValue] = React.useState("")
+  const { handleSearchValue } = React.useContext(AlbumContext)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleSearchValue(e.target.value)
+  }
+
   return (
     <div className="bg-carbon-300 overflow-hidden ">
       <header className="text-smoke grid grid-cols-[1fr,25rem] items-center max-w-7xl m-[0_auto] justify-between">
         <h1 className="text-logo">Charto</h1>
-        <Search placeholder="Pesquisar..." />
+        <Search placeholder="Pesquisar..." onChange={handleChange} />
         <span className="border-t-[2px] border-carbon-100 col-span-full "></span>
         <nav className="col-span-full justify-self-center  text-xl py-3">
           <ul className="flex gap-4 ">

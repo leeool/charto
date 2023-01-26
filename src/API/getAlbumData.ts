@@ -1,12 +1,12 @@
 import { getData } from "./apiGlobal"
 import getAuthorization from "./getAuthorization"
 
-export const fetchData = async () => {
+export const fetchData = async (query?: string) => {
   try {
     const auth = await getAuthorization()
     const data = await getData.get("/search", {
       params: {
-        q: "Gigi's% Recovery",
+        q: "war",
         type: "album"
       },
       headers: {

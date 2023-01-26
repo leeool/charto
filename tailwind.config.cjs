@@ -8,7 +8,10 @@ module.exports = {
 
     extend: {
       textColor: {
-        smoke: "#efefef",
+        smoke: {
+          100: "#efefef",
+          200: "#cdcdcd"
+        },
         carbon: {
           100: "#555"
         }
@@ -36,7 +39,10 @@ module.exports = {
           300: "#2f2f2f",
           400: "#2a2a2a"
         },
-        smoke: "#efefef"
+        smoke: {
+          100: "#efefef",
+          200: "#cdcdcd"
+        }
       },
 
       fontSize: {

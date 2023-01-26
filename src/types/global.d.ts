@@ -6,6 +6,8 @@ interface IGetAuthorization {
 
 interface IContext {
   accessToken: string
+  searchValue: string
+  handleSearchValue: (searchValue: string) => void
 }
 
 interface IAlbumData {
