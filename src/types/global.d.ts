@@ -7,3 +7,36 @@ interface IGetAuthorization {
 interface IContext {
   accessToken: string
 }
+
+interface IAlbumData {
+  id: string
+  name: string
+  artists: ArtistData[]
+  cover: IAlbumCover[]
+  releaseDate: string
+  spotifyLink: string
+  type: string
+}
+
+interface IAlbumCover {
+  height: number
+  width: number
+  url: string
+}
+
+interface IFetchData {
+  id: string
+  name: string
+  artists: ArtistData[]
+  images: IAlbumCover[]
+  release_date: string
+  external_urls: { spotify: string }
+  type: string
+}
+
+interface ArtistData {
+  id: string
+  name: string
+  url: string
+  href: string
+}

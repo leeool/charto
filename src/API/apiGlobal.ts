@@ -6,9 +6,12 @@ export const getAuth = axios.create({
     grant_type: "client_credentials"
   },
   headers: {
-    Authorization:
-      "Basic YTM0OTdiMTdlNmYxNDA5YWI5ZjcwYjU4ZjIwZGYyNDE6Y2UxOWUwMWU1ZDZmNDNmODgwZmUyYThkN2NiMTI0ZWE=",
+    Authorization: `Basic ${import.meta.env.VITE_SPOTIFY_API_KEY}`,
     ["Content-Type"]: "application/x-www-form-urlencoded"
   },
   method: "POST"
+})
+
+export const getData = axios.create({
+  baseURL: "https://api.spotify.com/v1"
 })

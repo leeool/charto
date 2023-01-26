@@ -40,8 +40,8 @@ module.exports = {
       },
 
       fontSize: {
-        logo: "4rem",
-        mainTitle: "2.5rem",
+        logo: "3rem",
+        mainTitle: "2rem",
         subTitle: "1.5rem"
       }
     }
