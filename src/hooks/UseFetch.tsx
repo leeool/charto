@@ -45,7 +45,7 @@ const UseFetch = (endpoint: string, params: IParams) => {
 
   React.useEffect(() => {
     fetch()
-  }, [params.q, params.type, params.ids])
+  }, [params.q, params.type])
 
   return { fetchedData, error, loading }
 }

@@ -11,8 +11,14 @@ const AlbumStorage = ({ children }: { children: React.ReactNode }) => {
     setSearchValue(value)
   }
 
-  const handleFavoritesIDs = (id: string) => {
-    setFavoritesIDs((prev) => prev.concat(id))
+  const handleFavoritesIDs = (clickID: string) => {
+    setFavoritesIDs((prev) => {
+      if (prev.includes(clickID)) {
+        return prev.filter((id) => id !== clickID)
+      } else {
+        return prev.concat(clickID)
+      }
+    })
   }
 
   return (
