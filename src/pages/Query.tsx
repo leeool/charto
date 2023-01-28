@@ -5,14 +5,18 @@ import UseGetData from "../hooks/UseGetData"
 
 const Query = () => {
   const { searchValue } = React.useContext(AlbumContext)
-  const { data } = UseGetData("/search", {
+  const { data, loading } = UseGetData("/search", {
     q: searchValue,
     type: "album,track"
   })
 
   return (
     <div>
-      <Section data={data} title={`Pesquisa: ${searchValue}`} />
+      <Section
+        data={data}
+        title={`Pesquisa: ${searchValue}`}
+        loading={loading}
+      />
     </div>
   )
 }

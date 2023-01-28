@@ -5,15 +5,13 @@ import UseGetData from "../hooks/UseGetData"
 
 const Favorites = () => {
   const { favoritesIDs } = React.useContext(AlbumContext)
-  const { data } = UseGetData("/albums", { ids: favoritesIDs.join(",") })
+  const { data, loading } = UseGetData("/albums", {
+    ids: favoritesIDs.join(",")
+  })
 
   return (
     <div>
-      {favoritesIDs.length ? (
-        <Section title="Favoritos" data={data} />
-      ) : (
-        <p>Ainda não há nada aqui.</p>
-      )}
+      <Section title="Favoritos" data={data} loading={loading} />
     </div>
   )
 }
