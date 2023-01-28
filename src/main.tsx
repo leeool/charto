@@ -7,6 +7,8 @@ import Home from "./pages/Home"
 import AlbumStorage from "./context/AlbumContext"
 import Query from "./pages/Query"
 import Discovery from "./pages/Discovery"
+import Favorites from "./pages/Favorites"
+import Profile from "./pages/Profile"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
+        element: <Favorites />,
         path: "/favoritos"
       },
       {
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
       {
         element: <Query />,
         path: "/pesquisa"
+      },
+      {
+        element: <Profile />,
+        path: "/perfil"
       }
     ]
   }

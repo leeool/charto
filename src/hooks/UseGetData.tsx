@@ -1,16 +1,18 @@
 import React from "react"
-import getAlbum, { fetchData } from "../API/getAlbumData"
+import UseFetch from "./UseFetch"
+import UseParseData from "./UseParseData"
 
 const UseGetData = (endpoint: string, params: IParams) => {
   const [data, setData] = React.useState<IAlbumData[] | null>(null)
+  const { fetchedData, loading, error } = UseFetch(endpoint, params)
 
   React.useEffect(() => {
-    fetchData(endpoint, params)
-      .then((res) => getAlbum(res))
-      .then((res) => setData(res))
-  }, [params.q])
+    if (fetchedData) {
+      setData(UseParseData(fetchedData))
+    }
+  }, [fetchedData])
 
-  return { data }
+  return { data, loading, error }
 }
 
 export default UseGetData

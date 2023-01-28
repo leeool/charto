@@ -8,6 +8,8 @@ interface IContext {
   accessToken: string
   searchValue: string
   handleSearchValue: (searchValue: string) => void
+  favoritesIDs: string[]
+  handleFavoritesIDs: (id: string) => void
 }
 
 interface IAlbumData {
@@ -46,4 +48,9 @@ interface ArtistData {
 interface IParams {
   q?: string
   type?: string
+  ids?: string
+}
+
+interface ICollectionResponse {
+  items: IFetchData[]
 }
