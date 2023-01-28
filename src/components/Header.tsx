@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div className="bg-carbon-300 overflow-hidden ">
-      <header className="text-smoke grid grid-cols-[auto,25rem] items-center max-w-7xl m-[0_auto] justify-between px-4">
+      <header className="text-smoke grid grid-cols-[auto,25rem] items-center max-w-7xl m-[0_auto] justify-between px-4 py-2">
         <Link to={"/"} className="block">
           <h1 className="text-logo">Charto</h1>
         </Link>
@@ -30,17 +30,17 @@ const Header = () => {
           <Search placeholder="Pesquisar..." />
         </form>
         <span className="border-t-[2px] border-carbon-100 col-span-full "></span>
-        <nav className="col-span-full justify-self-center  text-xl py-3">
-          <ul className="flex gap-4 ">
-            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors">
+        <nav className="col-span-full justify-self-center  text-xl pt-2 ">
+          <ul className="flex gap-x-1 ">
+            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1">
               <NavLink to={"descobrir"}>Descobrir</NavLink>
             </li>
             <span className="w-[2px] bg-carbon-100"></span>
-            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors">
+            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1 ">
               <NavLink to={"perfil"}>Perfil</NavLink>
             </li>
             <span className="w-[2px] bg-carbon-100"></span>
-            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors">
+            <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1">
               <NavLink to={"favoritos"}>Favoritos</NavLink>
             </li>
           </ul>
