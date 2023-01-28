@@ -2,10 +2,12 @@ import React, { createContext } from "react"
 
 export const AlbumContext = createContext({} as IContext)
 
+const localFavoriteIDs = JSON.parse(localStorage.getItem("favoriteIDs") || "[]")
+
 const AlbumStorage = ({ children }: { children: React.ReactNode }) => {
-  const [token, setToken] = React.useState("")
   const [searchValue, setSearchValue] = React.useState("")
-  const [favoritesIDs, setFavoritesIDs] = React.useState<string[]>([])
+  const [favoritesIDs, setFavoritesIDs] =
+    React.useState<string[]>(localFavoriteIDs)
 
   const handleSearchValue = (value: string) => {
     setSearchValue(value)
@@ -21,10 +23,13 @@ const AlbumStorage = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
+  React.useEffect(() => {
+    localStorage.setItem("favoriteIDs", JSON.stringify(favoritesIDs))
+  }, [favoritesIDs])
+
   return (
     <AlbumContext.Provider
       value={{
-        accessToken: ".",
         searchValue,
         handleSearchValue,
         favoritesIDs,
