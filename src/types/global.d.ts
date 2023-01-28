@@ -5,7 +5,6 @@ interface IGetAuthorization {
 }
 
 interface IContext {
-  accessToken: string
   searchValue: string
   handleSearchValue: (searchValue: string) => void
   favoritesIDs: string[]
@@ -45,12 +44,8 @@ interface ArtistData {
   href: string
 }
 
-interface IParams {
+interface IRequestParams {
   q?: string
   type?: string
   ids?: string
-}
-
-interface ICollectionResponse {
-  items: IFetchData[]
 }

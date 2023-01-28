@@ -2,7 +2,7 @@ import React from "react"
 import UseFetch from "./UseFetch"
 import UseParseData from "./UseParseData"
 
-const UseGetData = (endpoint: string, params: IParams) => {
+const UseGetData = (endpoint: string, params: IRequestParams) => {
   const [data, setData] = React.useState<IAlbumData[] | null>(null)
   const { fetchedData, loading, error } = UseFetch(endpoint, params)
 

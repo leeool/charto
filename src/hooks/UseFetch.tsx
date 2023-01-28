@@ -2,7 +2,7 @@ import React from "react"
 import { getData } from "../API/apiGlobal"
 import getAuthorization from "../API/getAuthorization"
 
-const UseFetch = (endpoint: string, params: IParams) => {
+const UseFetch = (endpoint: string, params: IRequestParams) => {
   const [fetchedData, setFetchedData] = React.useState<IFetchData[] | null>(
     null
   )
