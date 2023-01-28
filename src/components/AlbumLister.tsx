@@ -13,17 +13,28 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
     if (e.target instanceof SVGElement) handleFavoritesIDs(e.currentTarget.id)
   }
 
+  const handleKey = (e: React.KeyboardEvent) => {
+    if (e.target instanceof SVGElement && e.key == "Enter")
+      handleFavoritesIDs(e.currentTarget.id)
+  }
+
   return (
     <ul className="grid grid-cols-4 gap-8 my-8">
       {albums.map((album) => {
         return (
-          <li key={album.id} id={album.id} onClick={handleClick}>
+          <li
+            key={album.id}
+            id={album.id}
+            onClick={handleClick}
+            onKeyDown={handleKey}
+          >
             <img
               className="rounded-primary h-[18rem] object-cover"
               src={album.cover[0].url}
               alt="album cover"
+              tabIndex={0}
             />
-            <div className="grid grid-cols-[1fr_auto] justify-between pt-2 gap-1">
+            <div className="grid grid-cols-[1fr_auto] justify-between pt-2 gap-1 ">
               <a
                 href={album.spotifyLink}
                 target="_blank"
@@ -34,6 +45,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
                 </h3>
               </a>
               <svg
+                tabIndex={0}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -44,6 +56,12 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
                     : "fill-carbon-400 hover:fill-smoke-100 transition-colors"
                 ].join(" ")}
               >
+                <title>
+                  {favoritesIDs.includes(album.id)
+                    ? "Remover dos "
+                    : "Adicionar aos "}
+                  Favoritos
+                </title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
