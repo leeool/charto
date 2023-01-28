@@ -18,7 +18,7 @@ const UseFetch = (endpoint: string, params: IParams) => {
       const auth = await getAuthorization()
 
       if (!auth.access_token) throw new Error("Token Error")
-
+      if (params.ids?.length === 0 || params.q?.length === 0) return null
       const fetchedData = await getData.get(endpoint, {
         params: params,
         headers: {
@@ -29,7 +29,7 @@ const UseFetch = (endpoint: string, params: IParams) => {
       if (fetchedData.statusText !== "OK")
         throw new Error(fetchedData.statusText)
 
-      data = fetchedData.data.albums
+      data = fetchedData.data
       error = null
     } catch (e) {
       if (e instanceof Error) {
