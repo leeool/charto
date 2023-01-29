@@ -16,7 +16,6 @@ const UseFetch = (endpoint: string, params: IRequestParams) => {
 
     try {
       const auth = await getAuthorization()
-
       if (!auth.access_token) throw new Error("Token Error")
       if (params.ids?.length === 0 || params.q?.length === 0) return null
       const fetchedData = await getData.get(endpoint, {
@@ -26,14 +25,14 @@ const UseFetch = (endpoint: string, params: IRequestParams) => {
         }
       })
 
-      if (fetchedData.statusText !== "OK")
+      if (fetchedData.status < 200 || fetchedData.status >= 300)
         throw new Error(fetchedData.statusText)
 
       data = fetchedData.data
       error = null
     } catch (e) {
       if (e instanceof Error) {
-        console.error(`${e.name}: ${e.message}`)
+        console.error(`${e.name}: ${e.stack}`)
         error = e.message
       }
     } finally {
