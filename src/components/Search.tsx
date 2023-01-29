@@ -8,15 +8,15 @@ interface ISearch {
 
 const Search = ({ value, onChange, placeholder }: ISearch) => {
   return (
-    <div className="flex rounded-primary text-white transition-all overflow-hidden hover:ring-2 hover:ring-smoke-100 focus-within:ring-2 focus-within:ring-smoke-100">
+    <div className="flex rounded-primary text-white transition-all overflow-hidden hover:ring-2 hover:ring-smoke-100 focus-within:ring-2 focus-within:ring-smoke-100 max-w-full">
       <input
-        className="bg-carbon-400 block  placeholder:text-carbon-100 w-full px-2 py-1 min-h-[2rem] h-9 outline-none"
+        className="bg-carbon-400 block peer  placeholder:text-carbon-100 w-full px-2 py-1 min-h-[2rem] h-9 outline-none"
         type={"search"}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
       />
-      <button className="bg-carbon-400 px-2 py-1 hover:bg-carbon-200 flex items-center">
+      <button className="bg-carbon-400 peer-focus:bg-carbon-200 peer-hover:bg-carbon-200  px-2 py-1 hover:bg-carbon-200 flex items-center transition-colors">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

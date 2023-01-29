@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div className="bg-carbon-300 overflow-hidden ">
-      <header className="text-smoke grid grid-cols-[auto,25rem] items-center max-w-7xl m-[0_auto] justify-between px-4 py-2">
+      <header className="text-smoke grid md:grid-cols-[1fr_0.5fr] grid-cols-[1fr_1fr]  items-center max-w-7xl m-[0_auto] justify-between px-4 py-2">
         <Link to={"/"} className="block">
           <h1 className="text-logo">Charto</h1>
         </Link>

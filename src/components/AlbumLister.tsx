@@ -19,7 +19,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
   }
 
   return (
-    <ul className="grid lg:grid-cols-5 grid-cols-3 lg:gap-8 gap-5 my-8">
+    <ul className="grid lg:grid-cols-5 lg:gap-8 md:grid-cols-4 grid-cols-2 gap-5 my-8">
       {albums.map((album) => {
         return (
           <li
@@ -56,7 +56,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
                   "w-6 h-6 cursor-pointer stroke-smoke-100",
                   favoritesIDs.includes(album.id)
                     ? "fill-smoke-100 hover:opacity-80 transition-opacity"
-                    : "fill-carbon-400 hover:fill-smoke-100 transition-colors"
+                    : "fill-transparent hover:fill-smoke-100 transition-colors"
                 ].join(" ")}
               >
                 <title>
