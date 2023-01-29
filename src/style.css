@@ -8,3 +8,7 @@
 body {
   @apply bg-carbon-500;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}

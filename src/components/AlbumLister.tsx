@@ -53,7 +53,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 className={[
-                  "w-6 h-6 cursor-pointer stroke-smoke-100",
+                  "w-6 h-6 cursor-pointer stroke-smoke-100 outline-none",
                   favoritesIDs.includes(album.id)
                     ? "fill-smoke-100 hover:opacity-80 transition-opacity"
                     : "fill-transparent hover:fill-smoke-100 transition-colors"
