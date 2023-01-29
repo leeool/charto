@@ -1,13 +1,30 @@
 import React from "react"
 import Section from "../components/Section"
+import { AlbumContext } from "../context/AlbumContext"
 import UseGetData from "../hooks/UseGetData"
+import Favorites from "./Favorites"
 
 const Home = () => {
-  const { data, loading } = UseGetData("/browse/new-releases", {})
+  const { favoritesIDs } = React.useContext(AlbumContext)
+  const favorites = UseGetData("/albums", {
+    ids: favoritesIDs.join(",")
+  })
+  const newReleases = UseGetData("/browse/new-releases", {})
 
   return (
     <div>
-      <Section data={data} title="Novos Lançamentos" loading={loading} />
+      <Section
+        data={newReleases.data}
+        title="Novos Lançamentos"
+        loading={newReleases.loading}
+      />
+      {favorites.data ? (
+        <Section
+          data={favorites.data}
+          title="Seus Favoritos"
+          loading={favorites.loading}
+        />
+      ) : null}
     </div>
   )
 }
