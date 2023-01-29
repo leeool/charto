@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  @apply scroll-smooth antialiased;
+}
 body {
-  background-color: #202020;
+  @apply bg-carbon-500;
 }
