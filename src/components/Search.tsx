@@ -8,9 +8,9 @@ interface ISearch {
 
 const Search = ({ value, onChange, placeholder }: ISearch) => {
   return (
-    <div className="flex rounded-primary focus:outline-none focus:ring-2 hover:ring-2  ring-smoke-100  text-white transition-all overflow-hidden">
+    <div className="flex rounded-primary text-white transition-all overflow-hidden hover:ring-2 hover:ring-smoke-100 focus-within:ring-2 focus-within:ring-smoke-100">
       <input
-        className="bg-carbon-400  placeholder:text-carbon-100 w-full px-2 py-1  min-h-[2rem] h-9 outline-none "
+        className="bg-carbon-400 block  placeholder:text-carbon-100 w-full px-2 py-1 min-h-[2rem] h-9 outline-none"
         type={"search"}
         value={value}
         onChange={onChange}
