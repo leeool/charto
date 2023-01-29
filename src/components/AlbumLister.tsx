@@ -19,7 +19,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
   }
 
   return (
-    <ul className="grid grid-cols-4 gap-8 my-8">
+    <ul className="grid lg:grid-cols-5 grid-cols-3 lg:gap-8 gap-5 my-8">
       {albums.map((album) => {
         return (
           <li
@@ -29,18 +29,21 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
             onKeyDown={handleKey}
           >
             <img
-              className="rounded-primary h-[18rem] object-cover"
+              className="rounded-primary h-[14rem] object-cover w-full"
               src={album.cover[0].url}
               alt="album cover"
               tabIndex={0}
             />
-            <div className="grid grid-cols-[1fr_auto] justify-between pt-2 gap-1 ">
+            <div className="grid grid-cols-[1fr_auto] justify-between pt-2">
               <a
                 href={album.spotifyLink}
                 target="_blank"
-                className="justify-self-start "
+                className="justify-self-start overflow-hidden block  max-w-[calc(100%)] leading-none"
               >
-                <h3 className="text-2xl inline-block  after:h-[.1rem] after:block hover:after:bg-smoke after:w-full">
+                <h3
+                  title={album.name}
+                  className="text-xl inline-block  after:h-[.1rem] after:block hover:after:bg-smoke after:w-full whitespace-nowrap text-ellipsis max-w-[calc(100%)] overflow-hidden"
+                >
                   {album.name}
                 </h3>
               </a>
