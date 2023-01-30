@@ -51,6 +51,10 @@ module.exports = {
         logo: "3rem",
         mainTitle: "2rem",
         subTitle: "1.5rem"
+      },
+
+      maxWidth: {
+        container: "80rem"
       }
     }
   },

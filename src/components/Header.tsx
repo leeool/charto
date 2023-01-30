@@ -21,7 +21,7 @@ const Header = () => {
   }
 
   return (
-    <div className="bg-carbon-300 overflow-hidden ">
+    <div className="bg-carbon-300 overflow-hidden absolute w-full top-0 z-10">
       <header className="text-smoke grid md:grid-cols-[1fr_0.5fr] grid-cols-[1fr_1fr]  items-center max-w-7xl m-[0_auto] justify-between px-4 py-2">
         <Link to={"/"} className="block">
           <h1 className="text-logo">Charto</h1>

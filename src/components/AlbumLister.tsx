@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { AlbumContext } from "../context/AlbumContext"
 
 interface IAlbumLister {
@@ -28,16 +29,17 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
             onClick={handleClick}
             onKeyDown={handleKey}
           >
-            <img
-              className="rounded-primary h-[14rem] object-cover w-full"
-              src={album.cover[0].url}
-              alt="album cover"
-              tabIndex={0}
-            />
+            <Link to={`/album/${album.id}`}>
+              <img
+                className="rounded-primary h-[14rem] object-cover w-full"
+                src={album.cover[0].url}
+                alt="album cover"
+                tabIndex={0}
+              />
+            </Link>
             <div className="grid grid-cols-[1fr_auto] justify-between pt-2">
-              <a
-                href={album.spotifyLink}
-                target="_blank"
+              <Link
+                to={`/album/${album.id}`}
                 className="justify-self-start overflow-hidden block  max-w-[calc(100%)] leading-none"
               >
                 <h3
@@ -46,7 +48,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
                 >
                   {album.name}
                 </h3>
-              </a>
+              </Link>
               <svg
                 tabIndex={0}
                 xmlns="http://www.w3.org/2000/svg"
