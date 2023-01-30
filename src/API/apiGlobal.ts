@@ -1,5 +1,4 @@
 import axios from "axios"
-import { isNewReleasesResponse } from "../utils/checkFetchType"
 
 export const getAuth = axios.create({
   baseURL: "https://accounts.spotify.com/api/token",

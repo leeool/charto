@@ -2,7 +2,6 @@ import React from "react"
 import Section from "../components/Section"
 import { AlbumContext } from "../context/AlbumContext"
 import UseGetData from "../hooks/UseGetData"
-import Favorites from "./Favorites"
 
 const Home = () => {
   const { favoritesIDs } = React.useContext(AlbumContext)

@@ -1,7 +1,5 @@
 import React from "react"
 import Section from "../components/Section"
-import UseFetch from "../hooks/UseFetch"
-import UseGetAlbums from "../hooks/UseParseData"
 import UseGetData from "../hooks/UseGetData"
 
 const Discovery = () => {

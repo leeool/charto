@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { NavLink, useNavigate, useNavigation } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { AlbumContext } from "../context/AlbumContext"
 import Search from "./Search"
 

@@ -3,7 +3,6 @@ import { useParams } from "react-router"
 import { AlbumContext } from "../context/AlbumContext"
 import UseGetData from "../hooks/UseGetData"
 import { isSingleData } from "../utils/checkDataType"
-import { isSingleResponse } from "../utils/checkFetchType"
 
 const AlbumPage = () => {
   const { id } = useParams()

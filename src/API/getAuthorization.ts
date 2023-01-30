@@ -1,4 +1,3 @@
-import axios from "axios"
 import { getAuth } from "./apiGlobal"
 
 const getAuthorization = async (): Promise<IGetAuthorization> => {
