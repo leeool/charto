@@ -1,4 +1,5 @@
 import axios from "axios"
+import { isNewReleasesResponse } from "../utils/checkFetchType"
 
 export const getAuth = axios.create({
   baseURL: "https://accounts.spotify.com/api/token",
@@ -17,9 +18,8 @@ export const getData = axios.create({
 
   transformResponse: [
     (data) => {
-      const parsedData = JSON.parse(data)
-      if (parsedData.albums.items) return parsedData.albums.items
-      else return parsedData.albums
+      const json = JSON.parse(data)
+      return json
     }
   ]
 })

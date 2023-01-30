@@ -3,9 +3,7 @@ import { getData } from "../API/apiGlobal"
 import getAuthorization from "../API/getAuthorization"
 
 const UseFetch = (endpoint: string, params: IRequestParams) => {
-  const [fetchedData, setFetchedData] = React.useState<IFetchData[] | null>(
-    null
-  )
+  const [fetchedData, setFetchedData] = React.useState<IResponse | null>(null)
   const [error, setError] = React.useState<string | null>(null)
   const [loading, setLoading] = React.useState<boolean>(false)
 

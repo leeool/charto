@@ -3,7 +3,9 @@ import UseFetch from "./UseFetch"
 import UseParseData from "./UseParseData"
 
 const UseGetData = (endpoint: string, params: IRequestParams) => {
-  const [data, setData] = React.useState<IAlbumData[] | null>(null)
+  const [data, setData] = React.useState<
+    IAlbumData[] | ISingleAlbumData | null
+  >(null)
   const { fetchedData, loading, error } = UseFetch(endpoint, params)
 
   React.useEffect(() => {
