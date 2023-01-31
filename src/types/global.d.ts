@@ -9,6 +9,7 @@ interface IContext {
   handleSearchValue: (searchValue: string) => void
   favoritesIDs: string[]
   handleFavoritesIDs: (id: string) => void
+  reviewsMock: { content: string; user: string; rating: number }[]
 }
 
 interface IRequestParams {
