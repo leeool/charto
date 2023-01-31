@@ -21,6 +21,14 @@ interface ArtistData {
   href: string
 }
 
+interface TrackData {
+  name: string
+  artists: ArtistData[]
+  durationMs: number
+  spotifyLink: string
+  previewUrl: string
+}
+
 interface ISingleAlbumData extends IAlbumData {
   popularity: number
   totalTracks: number

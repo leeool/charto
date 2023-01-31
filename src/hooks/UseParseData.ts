@@ -39,7 +39,13 @@ const UseParseData = (
       type: fetchedData.album_type,
       popularity: fetchedData.popularity,
       totalTracks: fetchedData.total_tracks,
-      tracks: fetchedData.tracks.items
+      tracks: fetchedData.tracks.items.map((track) => ({
+        name: track.name,
+        artists: track.artists,
+        durationMs: track.duration_ms,
+        previewUrl: track.preview_url,
+        spotifyLink: track.external_urls.spotify
+      }))
     }
   } else return null
 }
