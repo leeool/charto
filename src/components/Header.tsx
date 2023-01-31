@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { NavLink, useNavigate } from "react-router-dom"
 import { AlbumContext } from "../context/AlbumContext"
-import Search from "./Search"
+import Search from "./Header/Search"
 
 const Header = () => {
   const { handleSearchValue } = React.useContext(AlbumContext)
@@ -22,24 +22,23 @@ const Header = () => {
 
   return (
     <div className="bg-carbon-300 overflow-hidden absolute w-full top-0 z-10">
-      <header className="text-smoke grid md:grid-cols-[1fr_0.5fr] grid-cols-[1fr_1fr]  items-center max-w-7xl m-[0_auto] justify-between px-4 py-2">
-        <Link to={"/"} className="block">
-          <h1 className="text-logo">Charto</h1>
+      <header className="text-smoke-100 grid md:grid-cols-[1fr_0.5fr] grid-cols-[1fr_1fr]  items-center max-w-7xl m-[0_auto] justify-between px-4 py-3">
+        <Link to={"/"} className="inline-block place-self-start leading-none">
+          <h1 className="text-logo inline-block">Charto</h1>
         </Link>
         <form onSubmit={handleSubmit}>
           <Search placeholder="Pesquisar..." />
         </form>
-        <span className="border-t-[2px] border-carbon-100 col-span-full "></span>
-        <nav className="col-span-full justify-self-center  text-xl pt-2 ">
-          <ul className="flex gap-x-1 ">
+        <nav className="col-span-full justify-self-center  text-xl mt-4">
+          <ul className="flex gap-x-3 items-center">
             <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1">
               <NavLink to={"descobrir"}>Descobrir</NavLink>
             </li>
-            <span className="w-[2px] bg-carbon-100"></span>
+            <span className="w-[2px] bg-carbon-100 h-[1.5rem]"></span>
             <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1 ">
               <NavLink to={"perfil"}>Perfil</NavLink>
             </li>
-            <span className="w-[2px] bg-carbon-100"></span>
+            <span className="w-[2px] bg-carbon-100 h-[1.5rem]"></span>
             <li className="cursor-pointer hover:text-[#cdcdcd] transition-colors px-2 py-1">
               <NavLink to={"favoritos"}>Favoritos</NavLink>
             </li>
