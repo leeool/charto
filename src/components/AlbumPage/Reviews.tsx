@@ -10,17 +10,17 @@ const Reviews = ({ id }: Props) => {
   const { reviews } = React.useContext(AlbumContext)
 
   return (
-    <div className="grid gap-y-6  ">
+    <section className="grid gap-y-6  ">
       <div className="grid">
         <h2 className="text-3xl mb-2">Reviews</h2>
         <span className="border-t-[2px] border-carbon-100 w-full"></span>
       </div>
-      <section className=" rounded-[4px] grid gap-y-6">
+      <div className=" grid gap-y-6 max-h-[40rem] overflow-y-scroll px-3">
         {reviews[id] ? (
           reviews[id]
             .map(({ content, user, recomendded }, index) => (
               <div
-                className="bg-carbon-400 rounded-[4px] overflow-hidden grid"
+                className="bg-carbon-400 rounded-[4px]  grid max-h-fit "
                 key={index}
               >
                 <ReviewText content={content} limit={30} />
@@ -35,8 +35,8 @@ const Reviews = ({ id }: Props) => {
         ) : (
           <div>Ainda não há nada aqui.</div>
         )}
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 

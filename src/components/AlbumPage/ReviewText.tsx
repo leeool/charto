@@ -10,22 +10,24 @@ const ReviewText = ({ content, limit }: { content: string; limit: number }) => {
   }
 
   React.useEffect(() => {
-    if (isExpanded === true) {
+    if (isExpanded) {
       setNewContent(content)
-    } else {
-      setNewContent(reducedString)
+    } else if (!isExpanded && splittedString.length > limit) {
+      setNewContent(reducedString + "...")
     }
   }, [isExpanded])
 
   return (
     <div className="px-6 py-4">
-      <p className="leading-relaxed text-ellipsis">{newContent}</p>
+      <pre className="leading-relaxed text-ellipsis font-outfit whitespace-normal">
+        {newContent}
+      </pre>
       {splittedString.length > limit ? (
         <button
           className="text-smoke-200 hover:underline inline-block"
           onClick={handleClick}
         >
-          ler mais...
+          {isExpanded ? "ler menos" : "ler mais..."}
         </button>
       ) : null}
     </div>

@@ -14,7 +14,7 @@ const ReviewForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (textAreaValue?.trim() && recommended !== null && id) {
-      handleReviews(id, textAreaValue, "leo123", recommended)
+      handleReviews(id, textAreaValue, "yourUser321", recommended)
       setTextAreaValue("")
     } else {
       setFormError(true)
