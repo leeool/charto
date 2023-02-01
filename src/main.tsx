@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import "./style.css"
 import Home from "./pages/Home"
 import AlbumStorage from "./context/AlbumContext"
@@ -21,23 +21,27 @@ const router = createBrowserRouter([
       },
       {
         element: <Favorites />,
-        path: "/favoritos"
+        path: "favoritos"
       },
       {
         element: <Discovery />,
-        path: "/descobrir"
+        path: "descobrir"
       },
       {
         element: <Query />,
-        path: "/pesquisa"
+        path: "pesquisa"
       },
       {
         element: <Profile />,
-        path: "/perfil"
+        path: "perfil"
       },
       {
         element: <AlbumPage />,
-        path: "/album/:id"
+        path: "item/:id"
+      },
+      {
+        path: "*",
+        element: <Navigate to={"/"} />
       }
     ]
   }
