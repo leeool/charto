@@ -1,20 +1,33 @@
 import React from "react"
 import TextArea from "../Form/TextArea"
 import * as ToggleGroup from "@radix-ui/react-toggle-group"
+import { AlbumContext } from "../../context/AlbumContext"
+import { useParams } from "react-router"
 
 const ReviewForm = () => {
   const [recommended, setRecommended] = React.useState<boolean | null>(null)
   const [textAreaValue, setTextAreaValue] = React.useState<string | null>(null)
+  const [formErro, setFormError] = React.useState(false)
+  const { id } = useParams()
+  const { handleReviews } = React.useContext(AlbumContext)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(recommended)
-    console.log(textAreaValue)
+    if (textAreaValue?.trim() && recommended !== null && id) {
+      handleReviews(id, textAreaValue, "leo123", recommended)
+    } else {
+      setFormError(true)
+      setTimeout(() => {
+        setFormError(false)
+      }, 3000)
+    }
   }
 
   return (
     <form
-      className="bg-carbon-400 p-4 rounded-[4px] grid gap-4"
+      className={`bg-carbon-400 transition-colors p-4 rounded-[4px] grid gap-4 border-2 border-transparent ${
+        formErro ? "border-red-500" : ""
+      }`}
       onSubmit={handleSubmit}
     >
       <TextArea setValue={setTextAreaValue} value={textAreaValue} />
