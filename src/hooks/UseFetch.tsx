@@ -1,3 +1,4 @@
+import { AxiosError } from "axios"
 import React from "react"
 import { getData } from "../API/apiGlobal"
 import getAuthorization from "../API/getAuthorization"
@@ -25,13 +26,12 @@ const UseFetch = (endpoint: string, params: IRequestParams) => {
 
       if (fetchedData.status < 200 || fetchedData.status >= 300)
         throw new Error(fetchedData.statusText)
-
       data = fetchedData.data
       error = null
     } catch (e) {
-      if (e instanceof Error) {
-        console.error(`${e.name}: ${e.stack}`)
-        error = e.message
+      if (e instanceof AxiosError && e.response && e.response.data) {
+        console.error(`${e.name}: ${e.message}`)
+        error = e.response.data.error.message
       }
     } finally {
       setFetchedData(data)
