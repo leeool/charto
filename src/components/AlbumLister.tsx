@@ -29,7 +29,7 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
             onClick={handleClick}
             onKeyDown={handleKey}
           >
-            <Link to={`/album/${album.id}`}>
+            <Link to={`/item/${album.id}`}>
               <img
                 className="rounded-primary h-[14rem] object-cover w-full"
                 src={album.cover[0].url}
@@ -39,12 +39,12 @@ const AlbumLister = ({ albums }: IAlbumLister) => {
             </Link>
             <div className="grid grid-cols-[1fr_auto] justify-between pt-2">
               <Link
-                to={`/album/${album.id}`}
+                to={`/item/${album.id}`}
                 className="justify-self-start overflow-hidden block  max-w-[calc(100%)] leading-none"
               >
                 <h3
                   title={album.name}
-                  className="text-xl inline-block  after:h-[.1rem] after:block hover:after:bg-smoke after:w-full whitespace-nowrap text-ellipsis max-w-[calc(100%)] overflow-hidden"
+                  className="text-xl inline-block  after:h-[.1rem] after:block hover:after:bg-smoke-100 after:w-full whitespace-nowrap text-ellipsis max-w-[calc(100%)] overflow-hidden"
                 >
                   {album.name}
                 </h3>
