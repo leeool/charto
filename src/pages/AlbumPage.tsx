@@ -40,13 +40,13 @@ const AlbumPage = () => {
       <img
         src={data.cover[0].url}
         alt="Album Cover"
-        className="absolute block left-0 top-32 w-full object-cover h-[30rem] object-[center_center] blur-[8px] -z-[1] "
+        className="absolute block left-0 top-28 w-full object-cover h-[30rem] object-[center_center] blur-[8px] -z-[1] "
       />
       <div className="grid sm:grid-cols-[auto_1fr] mt-[25rem] gap-6 justify-center sm:justify-items-start justify-items-center">
         <img
           src={data.cover[1].url}
           alt="Album Cover"
-          className="rounded-primary"
+          className="rounded-primary drop-shadow-xl shadow-black"
         />
         <div className="sm:self-end">
           <div className="grid justify-items-center gap-1  sm:justify-items-start  sm:justify-start mb-3">
@@ -56,7 +56,9 @@ const AlbumPage = () => {
                 target="_blank"
                 className="inline-block after:h-[2px] hover:after:bg-smoke-100 after:block"
               >
-                <h1 className="sm:text-5xl text-3xl">{data.name}</h1>
+                <h1 className="sm:text-5xl text-3xl drop-shadow-xl shadow-black">
+                  {data.name}
+                </h1>
               </a>
               <svg
                 tabIndex={0}
@@ -84,7 +86,7 @@ const AlbumPage = () => {
               </svg>
             </div>
             <a
-              href={data.artists[0].href}
+              href={data.artists[0].external_urls.spotify}
               target="_blank"
               className="inline-block after:h-[2px] hover:after:bg-smoke-200 after:block"
             >

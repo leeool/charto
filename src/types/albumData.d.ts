@@ -19,6 +19,7 @@ interface ArtistData {
   name: string
   url: string
   href: string
+  external_urls: { spotify: string }
 }
 
 interface TrackData {
