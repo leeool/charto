@@ -6,7 +6,7 @@ import { useParams } from "react-router"
 
 const ReviewForm = () => {
   const [recommended, setRecommended] = React.useState<boolean | null>(null)
-  const [textAreaValue, setTextAreaValue] = React.useState<string | null>(null)
+  const [textAreaValue, setTextAreaValue] = React.useState<string>("")
   const [formErro, setFormError] = React.useState(false)
   const { id } = useParams()
   const { handleReviews } = React.useContext(AlbumContext)
@@ -15,6 +15,7 @@ const ReviewForm = () => {
     e.preventDefault()
     if (textAreaValue?.trim() && recommended !== null && id) {
       handleReviews(id, textAreaValue, "leo123", recommended)
+      setTextAreaValue("")
     } else {
       setFormError(true)
       setTimeout(() => {
@@ -31,15 +32,17 @@ const ReviewForm = () => {
       onSubmit={handleSubmit}
     >
       <TextArea setValue={setTextAreaValue} value={textAreaValue} />
-      <div className="grid grid-cols-2 items-center">
+      <div className="grid grid-cols-[auto_1fr] items-center">
         <div className="grid gap-y-2 ">
-          <p className="text-xl">Recomendar</p>
+          <p className="text-xl text-center">Recomendar </p>
           <ToggleGroup.Root
             aria-required="true"
             type="single"
+            orientation="horizontal"
             className="flex gap-2 text-lg"
             onValueChange={(value) => {
-              value === "sim" ? setRecommended(true) : setRecommended(false)
+              if (value) setRecommended(value === "sim" ? true : false)
+              else setRecommended(null)
             }}
           >
             <ToggleGroup.Item
