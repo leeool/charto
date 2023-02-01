@@ -25,7 +25,10 @@ module.exports = {
           400: "#2a2a2a",
           500: "#202020"
         },
-        smoke: "#efefef"
+        smoke: {
+          100: "#efefef",
+          200: "#cdcdcd"
+        }
       },
 
       borderRadius: {
